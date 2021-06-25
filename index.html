@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Pricing Table Preview</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,15 +11,21 @@
       href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.10.2/css/all.css"
+    />
   </head>
 
-<style>
-body {
-    font-family: "Lato", sans-serif;
-    color: #202022;
-  }</style>
+  <style>
+    body {
+      font-family: "Lato", sans-serif;
+      color: #e5e4e5;
+      background-color: #0d0b07;
+    }
+  </style>
 
-<style>
+  <style>
     *,
     h1,
     h2,
@@ -33,282 +39,326 @@ body {
       padding: 0;
       box-sizing: border-box;
     }
-    
+
     ul {
       list-style: none;
     }
-    
-    ul li:before {
-      content: "✓";
+
+    li {
+      padding-left: 1.25rem;
     }
-    
+
+    ::marker {
+      content: "\f00c";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 700;
+      padding-right: 2rem;
+    }
+
     a {
       text-decoration: none;
     }
-    
+
     .pricing-header {
       margin: 2em auto;
       text-align: center;
       max-width: 330px;
     }
-    
+
     .plan__container {
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;}
-      
+      flex-wrap: wrap;
+    }
+
     #pricing-label {
       margin-bottom: 1rem;
     }
-    
-      #starter-plan {
-      margin-top: .5rem;
-      }
-      
-      #business-plan {
-      margin-bottom: .5rem;
-      }
-      
+
+    #starter-plan {
+      margin-top: 1rem;
+    }
+
+    #business-plan {
+      margin-bottom: 1rem;
+    }
+
     .plan {
-      border: 1px solid #8c8e8c;
       background-color: #f6f8fd;
-      padding: 2rem;
-      max-width: 320px;
-      margin: .5rem;
+      padding: 3rem 2rem 2rem 2rem;
+      max-width: 300px;
+      margin: 1rem;
+      color: #202022;
     }
-    
+
+    .plan__tab {
+      height: 2rem;
+      width: 300px;
+      margin-top: -3rem;
+      margin-left: -2rem;
+      margin-bottom: 1rem;
+      background-color: pink;
+    }
+
+    .plan__tab--starter {
+      background-color: #ddd3d3;
+    }
+    .plan__tab--executive {
+      background-color: #9585ab;
+    }
+    .plan__tab--business {
+      background-color: #735b87;
+    }
+
+    .plan__title {
+      font-weight: 800;
+    }
+
     .price {
-      margin: 1rem 0;
+      margin: 2rem 0;
     }
-    
+
+    .plan__feature--title {
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      color: rgb(167, 7, 7);
+    }
+
     .plan__link--container {
       display: flex;
       justify-content: center;
       align-items: center;
       margin: 2rem 0;
     }
-    
+
     .plan__link {
       text-decoration: none;
       color: whitesmoke;
       font-size: 1.15rem;
       width: 250px;
-      padding: 0.7rem 0;
+      padding: 1rem 0;
       text-align: center;
       background-color: rgb(167, 7, 7);
     }
 
+    .btn {
+      box-shadow: 1px 1px 8px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .btn:hover {
+      opacity: 0.8;
+    }
+
     .plus {
-  margin-bottom: 2rem;
-  
-  }
-    
+      margin-bottom: 2rem;
+    }
+
     .plan ul {
       margin: 1em;
     }
-    
+
     .plan li {
-      margin: 0.5rem 0;
-      color: #646262;
+      margin: 0.5rem 1rem;
+      color: #5c5a5a;
     }
-      
-     .contact {
+
+    .contact {
       text-align: center;
     }
-    
+
     .bold {
       font-weight: 800;
     }
-    
+
     .phone-number {
       margin-top: 1rem;
     }
-    
+
     .email__link--container {
       display: flex;
       justify-content: center;
       align-items: center;
       margin: 1rem 0 5rem 0;
     }
-    
+
     .email__link {
       text-decoration: none;
       color: whitesmoke;
       font-size: 1.15rem;
       width: 250px;
-      padding: 0.7rem 0;
+      padding: 1rem 0;
       text-align: center;
       background-color: rgb(167, 7, 7);
     }
-    
-    </style>
-    
-    <body>
-      <div class="pricing-header">
-            <h1 id="pricing-label">Pricing</h1>
-            <p id="pricing-description">
-              This easy to follow process makes sure that you get high quality photos
-              for your business needs.
-            </p>
-          </div>
-      
-          <div class="plan__container">
-            <div class="plan" id="starter-plan">
-              <h2>Starter</h2>
-              <h2 class="price">$750</h2>
-              
-              <div class="plan__link--container">
-                  <a href="#" class="plan__link">Book a Session</a>
-              </div>
-              
-              <h4 class="plan__feature--title">Photoshoot Planning</h4>
-              <ul>
-                <li>  Discuss Goals</li>
-                <li>  Schedule Alignment</li>
-                <li>  Rapid Turnaround</li>
-                <li>  Photoshoot Location</li>
-              </ul>
-              <h4 class="plan__feature--title">Professional Equipment</h4>
-              <ul>
-                <li>  DSLR Camera</li>
-                <li>  Light Diffusion</li>
-              </ul>
-              <h4 class="plan__feature--title">Pose Guidance</h4>
-              <ul>
-                <li>  Flattering Angles</li>
-                <li>  Professional Poses</li>
-                <li>  Fashionable Poses</li>
-              </ul>
-              <h4 class="plan__feature--title">Photoshoot Details</h4>
-              <ul>
-                <li> 30 Min Photoshoot</li>
-                <li>  2 Outfit Changes</li>
-                <li>  1 Hour Total Time</li>
-                <li>  At Ideal Location</li>
-              </ul>
-              <h4 class="plan__feature--title">Photoshop Editing</h4>
-              <ul>
-                <li>  Enhance Photos</li>
-                <li>  Correct Photos</li>
-                <li>  Optimize for Web</li>
-                <li>  Linkedin Profile</li>
-              </ul>
-              <h4 class="plan__feature--title">Photo Delivery</h4>
-              <ul>
-                <li>  Same Day Viewing</li>
-                <li>  Private Photo Gallery</li>
-                <li>  Edits ready in 2 days</li>
-                <li>  15-20 Photo Gallery</li>
-              </ul>
-              <h4 class="plan__feature--title">Total Edited Images</h4>
-              <ul>
-                <li>  Polished Images</li>
-              </ul>
-            </div>
-      
-            <div class="plan" id="executive-plan">
-              <h2>Executive</h2>
-              <h2 class="price">$1500</h2>
-              <div class="plan__link--container">
-                <a href="#" class="plan__link">Book a Session</a>
-              </div>
-              <div class="plus">
-                  <h4 class="plan__feature--title">All of Starter, Plus:</h4>
-              </div>
-              <h4 class="plan__feature--title">Photoshoot Planning</h4>
-              <ul>
-                <li>  Brand Guidelines</li>
-                <li>  Consultation</li>
-                <li>  Staging & Props</li>
-                <li>  Linkedin Profile</li>
-              </ul>
-              <h4 class="plan__feature--title">Professional Equipment</h4>
-              <ul>
-                <li>  DSLR Camera</li>
-                <li>  Light Diffusion</li>
-              </ul>
-              <h4 class="plan__feature--title">Glamour</h4>
-              <ul>
-                <li>  Hair Styling</li>
-                <li>  Makeup Artist</li>
-              </ul>
-              <h4 class="plan__feature--title">Photo Delivery</h4>
-              <ul>
-                <li>  Same Day Viewing</li>
-                <li>  Private Photo Gallery</li>
-                <li>  Edits ready in 2 days</li>
-                <li>  25-40 Best Photos</li>
-              </ul>
-              <h4 class="plan__feature--title">Total Edited Images</h4>
-              <ul>
-                <li>15 Polished Images</li>
-            </div>
-      
-            <div class="plan" id="business-plan">
-              <h2>Business</h2>
-              <h2 class="price">$3000</h2>
-              <div class="plan__link--container">
-                <a href="#" class="plan__link">Book a Session</a>
-              </div>
-              <div class="plus">
-                  <h4 class="plan__feature--title">All of Executive, Plus:</h4>
-              </div>
-              <h4 class="plan__feature--title">Photoshoot Planning</h4>
-              <ul>
-                <li>  Website Images</li>
-                <li>  Instagram Images</li>
-                <li>  Promotional Photos</li>
-                <li>  Linkedin Profile</li>
-              </ul>
-              <h4 class="plan__feature--title">Photoshop Editing</h4>
-              <ul>
-                <li>  Enhance</li>
-                <li>  Correct</li>
-                <li>  Optimize for Web</li>
-                <li>  Linkedin Profile</li>
-              </ul>
-              <h4 class="plan__feature--title">Photoshoot Details</h4>
-              <ul>
-                <li>  90 Min Photoshoot</li>
-                <li>  6 Outfit Changes</li>
-                <li>  6 Hour Total Time</li>
-              </ul>
-              <h4 class="plan__feature--title">Glam Squad</h4>
-              <ul>
-                <li>  Hair Styling</li>
-                <li>  Makeup Artist</li>
-                <li>  Fashion Stylist Referral</li>
-                <li>  Fashion Style Consultation</li>
-              </ul>
-              <h4 class="plan__feature--title">Framed Photo</h4>
-              <ul>
-                <li>  Custom Image Size</li>
-                <li>  Frame Material</li>
-                <li>  2 Week Turnaround Time</li>
-              </ul>
-              <h4 class="plan__feature--title">Photo Delivery</h4>
-              <ul>
-                <li>  Same Day Viewing</li>
-                <li>  Private Photo Gallery</li>
-                <li>  Edits ready in 2 days</li>
-                <li>  25-40 Best Photos</li>
-              </ul>
-              <h4 class="plan__feature--title">Total Edited Images</h4>
-              <ul>
-                <li>  15 Polished Images</li>
-              </ul>
-            </div>
-          </div>
-            
-            <div class="contact">
-              <p class="bold">Not sure which plan to get?</p>
-              <p>Contact us to discuss your goals</p>
-              <p class="phone-number bold">713-123-4567</p>
-              <p>M-F 10am-5pm</p>
-              <div class="email__link--container">
-                  <a href="#" class="email__link">Send an Email</a>
-              </div>
-          </div>
-    
-    </body>
-        </html>
+  </style>
+
+  <body>
+    <div class="pricing-header">
+      <h1 id="pricing-label">Pricing</h1>
+      <p id="pricing-description">
+        This easy to follow process makes sure that you get high quality photos
+        for your business needs.
+      </p>
+    </div>
+
+    <div class="plan__container">
+      <div class="plan" id="starter-plan">
+        <div class="plan__tab plan__tab--starter"></div>
+        <h2 class="plan__title">Starter</h2>
+        <h2 class="price">$750</h2>
+        <h4 class="plan__feature--title">Photo Delivery</h4>
+        <ul>
+          <li>Same Day Viewing</li>
+          <li>Private Photo Gallery</li>
+          <li>Edits ready in 2 days</li>
+          <li>15-20 Photo Gallery</li>
+        </ul>
+        <h4 class="plan__feature--title">Total Edited Images</h4>
+        <ul>
+          <li>7 Polished Images</li>
+        </ul>
+        <div class="plan__link--container">
+          <a href="#" class="plan__link btn">Book a Session</a>
+        </div>
+        <h4 class="plan__feature--title">Photoshoot Planning</h4>
+        <ul>
+          <li>Discuss Goals</li>
+          <li>Schedule Alignment</li>
+          <li>Rapid Turnaround</li>
+          <li>Photoshoot Location</li>
+        </ul>
+        <h4 class="plan__feature--title">Professional Equipment</h4>
+        <ul>
+          <li>DSLR Camera</li>
+          <li>Light Diffusion</li>
+        </ul>
+        <h4 class="plan__feature--title">Pose Guidance</h4>
+        <ul>
+          <li>Flattering Angles</li>
+          <li>Professional Poses</li>
+          <li>Fashionable Poses</li>
+        </ul>
+        <h4 class="plan__feature--title">Photoshoot Details</h4>
+        <ul>
+          <li>30 Min Photoshoot</li>
+          <li>2 Outfit Changes</li>
+          <li>1 Hour Total Time</li>
+          <li>At Ideal Location</li>
+        </ul>
+        <h4 class="plan__feature--title">Photoshop Editing</h4>
+        <ul>
+          <li>Enhance Photos</li>
+          <li>Correct Photos</li>
+          <li>Optimize for Web</li>
+          <li>Linkedin Profile</li>
+        </ul>
+      </div>
+
+      <div class="plan" id="executive-plan">
+        <div class="plan__tab plan__tab--executive"></div>
+        <h2 class="plan__title">Executive</h2>
+        <h2 class="price">$1500</h2>
+        <h4 class="plan__feature--title">Photo Delivery</h4>
+        <ul>
+          <li>Same Day Viewing</li>
+          <li>Private Photo Gallery</li>
+          <li>Edits ready in 2 days</li>
+          <li>25-40 Best Photos</li>
+        </ul>
+        <h4 class="plan__feature--title">Total Edited Images</h4>
+        <ul>
+          <li>15 Polished Images</li>
+        </ul>
+        <div class="plan__link--container">
+          <a href="#" class="plan__link btn">Book a Session</a>
+        </div>
+        <div class="plus">
+          <h4 class="plan__feature--title">All of Starter, Plus:</h4>
+        </div>
+        <h4 class="plan__feature--title">Photoshoot Planning</h4>
+        <ul>
+          <li>Brand Guidelines</li>
+          <li>Consultation</li>
+          <li>Staging & Props</li>
+          <li>Linkedin Profile</li>
+        </ul>
+        <h4 class="plan__feature--title">Professional Equipment</h4>
+        <ul>
+          <li>DSLR Camera</li>
+          <li>Light Diffusion</li>
+        </ul>
+        <h4 class="plan__feature--title">Glamour</h4>
+        <ul>
+          <li>Hair Styling</li>
+          <li>Makeup Artist</li>
+        </ul>
+      </div>
+
+      <div class="plan" id="business-plan">
+        <div class="plan__tab plan__tab--business"></div>
+        <h2 class="plan__title">Business</h2>
+        <h2 class="price">$3000</h2>
+        <h4 class="plan__feature--title">Photo Delivery</h4>
+        <ul>
+          <li>Same Day Viewing</li>
+          <li>Private Photo Gallery</li>
+          <li>Edits ready in 2 days</li>
+          <li>60-80 Best Photos</li>
+        </ul>
+        <h4 class="plan__feature--title">Total Edited Images</h4>
+        <ul>
+          <li>30 Polished Images</li>
+        </ul>
+        <div class="plan__link--container">
+          <a href="#" class="plan__link btn">Book a Session</a>
+        </div>
+        <div class="plus">
+          <h4 class="plan__feature--title">All of Executive, Plus:</h4>
+        </div>
+        <h4 class="plan__feature--title">Photoshoot Planning</h4>
+        <ul>
+          <li>Website Images</li>
+          <li>Instagram Images</li>
+          <li>Promotional Photos</li>
+          <li>Linkedin Profile</li>
+        </ul>
+        <h4 class="plan__feature--title">Photoshop Editing</h4>
+        <ul>
+          <li>Enhance</li>
+          <li>Correct</li>
+          <li>Optimize for Web</li>
+          <li>Linkedin Profile</li>
+        </ul>
+        <h4 class="plan__feature--title">Photoshoot Details</h4>
+        <ul>
+          <li>90 Min Photoshoot</li>
+          <li>6 Outfit Changes</li>
+          <li>6 Hour Total Time</li>
+        </ul>
+        <h4 class="plan__feature--title">Glam Squad</h4>
+        <ul>
+          <li>Hair Styling</li>
+          <li>Makeup Artist</li>
+          <li>Fashion Stylist Referral</li>
+          <li>Fashion Style Consultation</li>
+        </ul>
+        <h4 class="plan__feature--title">Framed Photo</h4>
+        <ul>
+          <li>Custom Image Size</li>
+          <li>Frame Material</li>
+          <li>2 Week Turnaround Time</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="contact">
+      <p class="bold">Not sure which plan to get?</p>
+      <p>Contact us to discuss your goals</p>
+      <p class="phone-number bold">713-123-4567</p>
+      <p>M-F 10am-5pm</p>
+      <div class="email__link--container">
+        <a href="#" class="email__link btn">Send an Email</a>
+      </div>
+    </div>
+  </body>
+</html>
