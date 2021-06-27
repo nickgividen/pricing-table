@@ -91,8 +91,8 @@
 
     .plan {
       background-color: #f6f8fd;
-      width: 95%;
-      max-width: 600px;
+      width: 85%;
+      max-width: 500px;
       margin: 1rem auto;
       color: #161819;
     }
@@ -162,7 +162,7 @@
     }
 
     .plan ul {
-      margin: 1em;
+      margin: 1em 0;
     }
 
     .plan li {
@@ -190,14 +190,38 @@
       margin: 1rem auto;
     }
 
+    @media screen and (min-width: 500px) {
+      .plan {
+        width: 80%;
+      }
+      .plan__content {
+        padding: 1rem 2rem;
+      }
+    }
+
     @media screen and (min-width: 880px) {
       .plan__container {
         display: flex;
         justify-content: center;
+        width: 90%;
+        margin: 0 auto;
       }
 
       .plan {
+        margin: 1rem 0.5rem;
+        max-width: 400px;
+      }
+      .plan__content {
+        padding: 2rem;
+      }
+    }
+
+    @media screen and (min-width: 1100px) {
+      .plan {
         margin: 1rem;
+      }
+      .plan__content {
+        padding: 1rem 3rem;
       }
     }
   </style>
