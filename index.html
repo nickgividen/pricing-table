@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pricing Table Preview</title>
-    <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -29,6 +28,7 @@
   </style>
 
   <style>
+    /* General Styles */
     *,
     h1,
     h2,
@@ -66,12 +66,54 @@
     a {
       text-decoration: none;
     }
+    /* Header Styles */
 
     .pricing-header {
-      margin: 2em auto;
+      margin: 2rem auto;
       text-align: center;
       max-width: 330px;
     }
+
+    /* selector Styles */
+    .selector__container {
+      display: flex;
+      justify-content: space-between;
+      width: 85%;
+      max-width: 500px;
+      margin: 2rem auto;
+    }
+
+    .selector {
+      font-size: 1.2rem;
+      background-color: #f6f8fd;
+      color: #161819;
+      width: 32.5%;
+      padding: 0.7rem 0;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .selector:hover {
+      color: #9f191f;
+      transition: 100ms linear;
+    }
+
+    .selector--starter {
+      border: 3px solid #ddd3d3;
+    }
+    .selector--professional {
+      border: 3px solid #9585ab;
+    }
+    .selector--business {
+      border: 3px solid #735b87;
+    }
+
+    .selector--selected {
+      color: #9f191f;
+      font-weight: 700;
+    }
+
+    /* Plan Styles  */
 
     .plan__container {
       display: block;
@@ -83,10 +125,16 @@
 
     #starter-plan {
       margin-top: 1rem;
+      border: 5px solid #ddd3d3;
+    }
+
+    #professional-plan {
+      border: 5px solid #9585ab;
     }
 
     #business-plan {
       margin-bottom: 1rem;
+      border: 5px solid #735b87;
     }
 
     .plan {
@@ -95,6 +143,11 @@
       max-width: 500px;
       margin: 1rem auto;
       color: #161819;
+      display: none;
+    }
+
+    .plan--selected {
+      display: block;
     }
 
     .plan__tab {
@@ -109,7 +162,7 @@
     .plan__tab--starter {
       background-color: #ddd3d3;
     }
-    .plan__tab--executive {
+    .plan__tab--professional {
       background-color: #9585ab;
     }
     .plan__tab--business {
@@ -190,7 +243,10 @@
       margin: 1rem auto;
     }
 
-    @media screen and (min-width: 500px) {
+    @media screen and (min-width: 550px) {
+      .selector__container {
+        width: 80%;
+      }
       .plan {
         width: 80%;
       }
@@ -199,31 +255,35 @@
       }
     }
 
-    @media screen and (min-width: 880px) {
+    @media screen and (min-width: 950px) {
+      .selector__container {
+        display: none;
+      }
       .plan__container {
         display: flex;
-        justify-content: center;
-        width: 90%;
+        justify-content: space-between;
+        width: 80%;
         margin: 0 auto;
       }
 
       .plan {
         margin: 1rem 0.5rem;
-        max-width: 400px;
+        max-width: 350px;
+        display: block;
       }
       .plan__content {
         padding: 2rem;
       }
     }
 
-    @media screen and (min-width: 1100px) {
+    /* @media screen and (min-width: 1100px) {
       .plan {
         margin: 1rem;
       }
       .plan__content {
-        padding: 1rem 3rem;
+        padding: 2rem 3rem;
       }
-    }
+    } */
   </style>
 
   <body>
@@ -235,8 +295,23 @@
       </p>
     </div>
 
+    <div class="selector__container">
+      <div
+        id="selector--starter"
+        class="selector--starter selector selector--selected"
+      >
+        Starter
+      </div>
+      <div id="selector--professional" class="selector--professional selector">
+        Professional
+      </div>
+      <div id="selector--business" class="selector--business selector">
+        Business
+      </div>
+    </div>
+
     <div class="plan__container">
-      <div class="plan" id="starter-plan">
+      <div class="plan plan--selected" id="starter-plan">
         <div class="plan__tab plan__tab--starter"></div>
         <div class="plan__content">
           <h2 class="plan__title">Starter</h2>
@@ -294,10 +369,10 @@
         </div>
       </div>
 
-      <div class="plan" id="executive-plan">
-        <div class="plan__tab plan__tab--executive"></div>
+      <div class="plan" id="professional-plan">
+        <div class="plan__tab plan__tab--professional"></div>
         <div class="plan__content">
-          <h2 class="plan__title">Executive</h2>
+          <h2 class="plan__title">Professional</h2>
           <h2 class="price">$1500</h2>
           <h4 class="plan__feature--title">Photo Delivery</h4>
           <ul>
@@ -364,7 +439,7 @@
             >
           </div>
           <div class="plus">
-            <h4 class="plan__feature--title">All of Executive, Plus:</h4>
+            <h4 class="plan__feature--title">All of Professional, Plus:</h4>
           </div>
           <h4 class="plan__feature--title">Photoshoot Planning</h4>
           <ul>
@@ -416,5 +491,68 @@
         >
       </div>
     </div>
+
+    <script>
+      // variables for boxes
+      var starterPlan = document.getElementById("starter-plan");
+      var professionalPlan = document.getElementById("professional-plan");
+      var businessPlan = document.getElementById("business-plan");
+
+      // variables for buttons
+      var selectorStarter = document.getElementById("selector--starter");
+      var selectorProfessional = document.getElementById(
+        "selector--professional"
+      );
+      var selectorBusiness = document.getElementById("selector--business");
+
+      // Function to remove selected class
+      function removeSelected() {
+        if (starterPlan.classList.contains("plan--selected")) {
+          starterPlan.classList.remove("plan--selected");
+        } else if (professionalPlan.classList.contains("plan--selected")) {
+          professionalPlan.classList.remove("plan--selected");
+        } else if (businessPlan.classList.contains("plan--selected")) {
+          businessPlan.classList.remove("plan--selected");
+        }
+      }
+
+      function removeSelectedTab() {
+        if (selectorStarter.classList.contains("selector--selected")) {
+          selectorStarter.classList.remove("selector--selected");
+        } else if (
+          selectorProfessional.classList.contains("selector--selected")
+        ) {
+          selectorProfessional.classList.remove("selector--selected");
+        } else if (selectorBusiness.classList.contains("selector--selected")) {
+          selectorBusiness.classList.remove("selector--selected");
+        }
+      }
+
+      // Functions to select boxes
+      function showStarter() {
+        removeSelected();
+        removeSelectedTab();
+        starterPlan.classList.add("plan--selected");
+        selectorStarter.classList.add("selector--selected");
+      }
+
+      function showProfessional() {
+        removeSelected();
+        removeSelectedTab();
+        professionalPlan.classList.add("plan--selected");
+        selectorProfessional.classList.add("selector--selected");
+      }
+
+      function showBusiness() {
+        removeSelected();
+        removeSelectedTab();
+        businessPlan.classList.add("plan--selected");
+        selectorBusiness.classList.add("selector--selected");
+      }
+      //   event listeners
+      selectorStarter.addEventListener("click", showStarter);
+      selectorProfessional.addEventListener("click", showProfessional);
+      selectorBusiness.addEventListener("click", showBusiness);
+    </script>
   </body>
 </html>
