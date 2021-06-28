@@ -150,13 +150,30 @@
       display: block;
     }
 
-    .plan__tab {
-      height: 16px;
-      width: 100%;
+    .plan__title--row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 4rem;
     }
 
     .plan__content {
-      padding: 1rem;
+      padding: 2rem;
+    }
+
+    .content__row {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .content__row--child {
+      min-width: 200px;
+    }
+
+    .plan__tab {
+      height: 16px;
+      width: 100%;
+      display: none;
     }
 
     .plan__tab--starter {
@@ -174,8 +191,8 @@
     }
 
     .price {
-      font-weight: 400;
-      margin: 2rem 0;
+      font-weight: 600;
+      color: #6d4c80;
     }
 
     .plan__feature--title {
@@ -243,7 +260,7 @@
       margin: 1rem auto;
     }
 
-    @media screen and (min-width: 550px) {
+    /* @media screen and (min-width: 550px) {
       .selector__container {
         width: 80%;
       }
@@ -253,7 +270,7 @@
       .plan__content {
         padding: 1rem 2rem;
       }
-    }
+    } */
 
     @media screen and (min-width: 950px) {
       .selector__container {
@@ -271,19 +288,29 @@
         max-width: 350px;
         display: block;
       }
+
+      .plan__tab {
+        display: block;
+      }
+
       .plan__content {
         padding: 2rem;
       }
-    }
 
-    /* @media screen and (min-width: 1100px) {
-      .plan {
-        margin: 1rem;
+      .plan__title--row {
+        display: block;
+        margin-bottom: 0;
       }
-      .plan__content {
-        padding: 2rem 3rem;
+
+      .content__row {
+        display: block;
       }
-    } */
+
+      .price {
+        font-weight: 400;
+        margin: 2rem 0;
+      }
+    }
   </style>
 
   <body>
@@ -314,66 +341,84 @@
       <div class="plan plan--selected" id="starter-plan">
         <div class="plan__tab plan__tab--starter"></div>
         <div class="plan__content">
-          <h2 class="plan__title">Starter</h2>
-          <h2 class="price">$750</h2>
-          <h4 class="plan__feature--title">Photo Delivery</h4>
-          <ul>
-            <li>Same Day Viewing</li>
-            <li>Private Photo Gallery</li>
-            <li>Edits ready in 2 days</li>
-            <li>15-20 Photo Gallery</li>
-          </ul>
-          <h4 class="plan__feature--title">Total Edited Images</h4>
-          <ul>
-            <li>7 Polished Images</li>
-          </ul>
+          <div class="plan__title--row">
+            <h2 class="plan__title">Starter</h2>
+            <h2 class="price">$750</h2>
+          </div>
+          <div class="content__row">
+            <div class="content__row--child">
+              <h4 class="plan__feature--title">Photo Delivery</h4>
+              <ul>
+                <li>Same Day Viewing</li>
+                <li>Private Photo Gallery</li>
+                <li>Edits ready in 2 days</li>
+                <li>15-20 Photo Gallery</li>
+              </ul>
+            </div>
+            <div class="content__row--child">
+              <h4 class="plan__feature--title">Photoshoot Details</h4>
+              <ul>
+                <li>30 Min Photoshoot</li>
+                <li>2 Outfit Changes</li>
+                <li>1 Hour Total Time</li>
+                <li>7 Edited Images</li>
+              </ul>
+            </div>
+          </div>
           <div class="plan__link--container">
             <a
               href="https://barfieldphotography.com/contact-us/"
               class="plan__link btn"
-              >Book a Session</a
+              >Book a Photoshoot</a
             >
           </div>
-          <h4 class="plan__feature--title">Photoshoot Planning</h4>
-          <ul>
-            <li>Discuss Goals</li>
-            <li>Schedule Alignment</li>
-            <li>Rapid Turnaround</li>
-            <li>Photoshoot Location</li>
-          </ul>
-          <h4 class="plan__feature--title">Professional Equipment</h4>
-          <ul>
-            <li>DSLR Camera</li>
-            <li>Light Diffusion</li>
-          </ul>
-          <h4 class="plan__feature--title">Pose Guidance</h4>
-          <ul>
-            <li>Flattering Angles</li>
-            <li>Professional Poses</li>
-            <li>Fashionable Poses</li>
-          </ul>
-          <h4 class="plan__feature--title">Photoshoot Details</h4>
-          <ul>
-            <li>30 Min Photoshoot</li>
-            <li>2 Outfit Changes</li>
-            <li>1 Hour Total Time</li>
-            <li>At Ideal Location</li>
-          </ul>
-          <h4 class="plan__feature--title">Photoshop Editing</h4>
-          <ul>
-            <li>Enhance Photos</li>
-            <li>Correct Photos</li>
-            <li>Optimize for Web</li>
-            <li>Linkedin Profile</li>
-          </ul>
+          <div class="content__row">
+            <div class="content__row--child">
+              <h4 class="plan__feature--title">Photoshoot Planning</h4>
+              <ul>
+                <li>Discuss Goals</li>
+                <li>Schedule Alignment</li>
+                <li>Rapid Turnaround</li>
+                <li>Photoshoot Location</li>
+              </ul>
+            </div>
+            <div class="content__row--child">
+              <h4 class="plan__feature--title">Photoshop Editing</h4>
+              <ul>
+                <li>Enhance Photos</li>
+                <li>Correct Photos</li>
+                <li>Optimize for Web</li>
+                <li>Linkedin Profile</li>
+              </ul>
+            </div>
+          </div>
+          <div class="content__row">
+            <div class="content__row--child">
+              <h4 class="plan__feature--title">Professional Equipment</h4>
+              <ul>
+                <li>DSLR Camera</li>
+                <li>Light Diffusion</li>
+              </ul>
+            </div>
+            <div class="content__row--child">
+              <h4 class="plan__feature--title">Pose Guidance</h4>
+              <ul>
+                <li>Flattering Angles</li>
+                <li>Professional Poses</li>
+                <li>Fashionable Poses</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="plan" id="professional-plan">
         <div class="plan__tab plan__tab--professional"></div>
         <div class="plan__content">
-          <h2 class="plan__title">Professional</h2>
-          <h2 class="price">$1500</h2>
+          <div class="plan__title--row">
+            <h2 class="plan__title">Professional</h2>
+            <h2 class="price">$1500</h2>
+          </div>
           <h4 class="plan__feature--title">Photo Delivery</h4>
           <ul>
             <li>Same Day Viewing</li>
@@ -389,7 +434,7 @@
             <a
               href="https://barfieldphotography.com/contact-us/"
               class="plan__link btn"
-              >Book a Session</a
+              >Book a Photoshoot</a
             >
           </div>
           <div class="plus">
@@ -418,8 +463,10 @@
       <div class="plan" id="business-plan">
         <div class="plan__tab plan__tab--business"></div>
         <div class="plan__content">
-          <h2 class="plan__title">Business</h2>
-          <h2 class="price">$3000</h2>
+          <div class="plan__title--row">
+            <h2 class="plan__title">Business</h2>
+            <h2 class="price">$3000</h2>
+          </div>
           <h4 class="plan__feature--title">Photo Delivery</h4>
           <ul>
             <li>Same Day Viewing</li>
@@ -435,7 +482,7 @@
             <a
               href="https://barfieldphotography.com/contact-us/"
               class="plan__link btn"
-              >Book a Session</a
+              >Book a Photoshoot</a
             >
           </div>
           <div class="plus">
