@@ -71,6 +71,7 @@
     .pricing-header {
       margin: 2rem auto;
       text-align: center;
+      width: 85%;
       max-width: 330px;
     }
 
@@ -84,11 +85,12 @@
     }
 
     .selector {
-      font-size: 1.2rem;
+      font-size: 0.9rem;
       background-color: #f6f8fd;
       color: #161819;
-      width: 32.5%;
-      padding: 0.7rem 0;
+      width: 32%;
+      min-width: 90px;
+      padding: 0.5rem 0;
       text-align: center;
       cursor: pointer;
     }
@@ -99,13 +101,13 @@
     }
 
     .selector--starter {
-      border: 3px solid #ddd3d3;
+      border: 2px solid #ddd3d3;
     }
     .selector--professional {
-      border: 3px solid #9585ab;
+      border: 2px solid #9585ab;
     }
     .selector--business {
-      border: 3px solid #735b87;
+      border: 2px solid #735b87;
     }
 
     .selector--selected {
@@ -153,7 +155,8 @@
     .plan__title--row {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 4rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
     }
 
     .plan__content {
@@ -167,7 +170,7 @@
     }
 
     .content__row--child {
-      min-width: 200px;
+      width: 245px;
     }
 
     .plan__tab {
@@ -260,17 +263,14 @@
       margin: 1rem auto;
     }
 
-    /* @media screen and (min-width: 550px) {
-      .selector__container {
-        width: 80%;
+    @media screen and (max-width: 558px) {
+      .plan__title--row {
+        display: block;
       }
-      .plan {
-        width: 80%;
+      .price {
+        margin-top: 2rem;
       }
-      .plan__content {
-        padding: 1rem 2rem;
-      }
-    } */
+    }
 
     @media screen and (min-width: 950px) {
       .selector__container {
@@ -278,9 +278,9 @@
       }
       .plan__container {
         display: flex;
-        justify-content: space-between;
-        width: 80%;
-        max-width: 1100px;
+        justify-content: center;
+        width: 90%;
+        max-width: 1200px;
         margin: 0 auto;
       }
 
@@ -290,9 +290,9 @@
         display: block;
       }
 
-      .plan__tab {
+      /* .plan__tab {
         display: block;
-      }
+      } */
 
       .plan__content {
         padding: 2rem;
@@ -308,7 +308,6 @@
       }
 
       .price {
-        font-weight: 400;
         margin: 2rem 0;
       }
     }
@@ -420,17 +419,26 @@
             <h2 class="plan__title">Professional</h2>
             <h2 class="price">$1500</h2>
           </div>
-          <h4 class="plan__feature--title">Photo Delivery</h4>
-          <ul>
-            <li>Same Day Viewing</li>
-            <li>Private Photo Gallery</li>
-            <li>Edits ready in 2 days</li>
-            <li>25-40 Best Photos</li>
-          </ul>
-          <h4 class="plan__feature--title">Total Edited Images</h4>
-          <ul>
-            <li>15 Polished Images</li>
-          </ul>
+          <div class="content__row">
+            <div class="content__row--child">
+              <h4 class="plan__feature--title">Photo Delivery</h4>
+              <ul>
+                <li>Same Day Viewing</li>
+                <li>Private Photo Gallery</li>
+                <li>Edits ready in 2 days</li>
+                <li>25-40 Best Photos</li>
+              </ul>
+            </div>
+            <div class="content__row--child">
+              <h4 class="plan__feature--title">Photoshoot Details</h4>
+              <ul>
+                <li>60 Min Photoshoot</li>
+                <li>4 Outfit Changes</li>
+                <li>3 Hours total time</li>
+                <li>15 Edited Images</li>
+              </ul>
+            </div>
+          </div>
           <div class="plan__link--container">
             <a
               href="https://barfieldphotography.com/contact-us/"
@@ -441,23 +449,33 @@
           <div class="plus">
             <h4 class="plan__feature--title">All of Starter, Plus:</h4>
           </div>
-          <h4 class="plan__feature--title">Photoshoot Planning</h4>
-          <ul>
-            <li>Brand Guidelines</li>
-            <li>Consultation</li>
-            <li>Staging & Props</li>
-            <li>Linkedin Profile</li>
-          </ul>
-          <h4 class="plan__feature--title">Professional Equipment</h4>
-          <ul>
-            <li>DSLR Camera</li>
-            <li>Light Diffusion</li>
-          </ul>
-          <h4 class="plan__feature--title">Glamour</h4>
-          <ul>
-            <li>Hair Styling</li>
-            <li>Makeup Artist</li>
-          </ul>
+          <div class="content__row">
+            <div class="content__row--child">
+              <h4 class="plan__feature--title">Photoshoot Planning</h4>
+              <ul>
+                <li>Brand Guidelines</li>
+                <li>Consultation</li>
+                <li>Staging & Props</li>
+                <li>Linkedin Profile</li>
+              </ul>
+            </div>
+            <div class="content__row--child">
+              <h4 class="plan__feature--title">Professional Equipment</h4>
+              <ul>
+                <li>DSLR Camera</li>
+                <li>Light Diffusion</li>
+              </ul>
+            </div>
+          </div>
+          <div class="content__row">
+            <div class="content__row--child">
+              <h4 class="plan__feature--title">Glamour</h4>
+              <ul>
+                <li>Hair Styling</li>
+                <li>Makeup Artist</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -468,17 +486,26 @@
             <h2 class="plan__title">Business</h2>
             <h2 class="price">$3000</h2>
           </div>
-          <h4 class="plan__feature--title">Photo Delivery</h4>
-          <ul>
-            <li>Same Day Viewing</li>
-            <li>Private Photo Gallery</li>
-            <li>Edits ready in 2 days</li>
-            <li>60-80 Best Photos</li>
-          </ul>
-          <h4 class="plan__feature--title">Total Edited Images</h4>
-          <ul>
-            <li>30 Polished Images</li>
-          </ul>
+          <div class="content__row">
+            <div class="content__row--child">
+              <h4 class="plan__feature--title">Photo Delivery</h4>
+              <ul>
+                <li>Same Day Viewing</li>
+                <li>Private Photo Gallery</li>
+                <li>Edits ready in 2 days</li>
+                <li>60-80 Best Photos</li>
+              </ul>
+            </div>
+            <div class="content__row--child">
+              <h4 class="plan__feature--title">Photoshoot Details</h4>
+              <ul>
+                <li>90 Min Photoshoot</li>
+                <li>6 Outfit Changes</li>
+                <li>6 Hour Total Time</li>
+                <li>30 Edited Images</li>
+              </ul>
+            </div>
+          </div>
           <div class="plan__link--container">
             <a
               href="https://barfieldphotography.com/contact-us/"
@@ -489,39 +516,46 @@
           <div class="plus">
             <h4 class="plan__feature--title">All of Professional, Plus:</h4>
           </div>
-          <h4 class="plan__feature--title">Photoshoot Planning</h4>
-          <ul>
-            <li>Website Images</li>
-            <li>Instagram Images</li>
-            <li>Promotional Photos</li>
-            <li>Linkedin Profile</li>
-          </ul>
-          <h4 class="plan__feature--title">Photoshop Editing</h4>
-          <ul>
-            <li>Enhance</li>
-            <li>Correct</li>
-            <li>Optimize for Web</li>
-            <li>Linkedin Profile</li>
-          </ul>
-          <h4 class="plan__feature--title">Photoshoot Details</h4>
-          <ul>
-            <li>90 Min Photoshoot</li>
-            <li>6 Outfit Changes</li>
-            <li>6 Hour Total Time</li>
-          </ul>
-          <h4 class="plan__feature--title">Glam Squad</h4>
-          <ul>
-            <li>Hair Styling</li>
-            <li>Makeup Artist</li>
-            <li>Fashion Stylist Referral</li>
-            <li>Fashion Style Consultation</li>
-          </ul>
-          <h4 class="plan__feature--title">Framed Photo</h4>
-          <ul>
-            <li>Custom Image Size</li>
-            <li>Frame Material</li>
-            <li>2 Week Turnaround Time</li>
-          </ul>
+          <div class="content__row">
+            <div class="content__row--child">
+              <h4 class="plan__feature--title">Photoshoot Planning</h4>
+              <ul>
+                <li>Website Images</li>
+                <li>Instagram Images</li>
+                <li>Promotional Photos</li>
+                <li>Linkedin Profile</li>
+              </ul>
+            </div>
+            <div class="content__row--child">
+              <h4 class="plan__feature--title">Photoshop Editing</h4>
+              <ul>
+                <li>Enhance</li>
+                <li>Correct</li>
+                <li>Optimize for Web</li>
+                <li>Linkedin Profile</li>
+              </ul>
+            </div>
+          </div>
+          <div class="content__row">
+            <div class="content__row--child">
+              <h4 class="plan__feature--title">Framed Photo</h4>
+              <ul>
+                <li>Custom Image Size</li>
+                <li>Frame Material</li>
+                <li>2 Week Turnaround Time</li>
+              </ul>
+            </div>
+            <div class="content__row--child">
+              <h4 class="plan__feature--title">Glam Squad</h4>
+              <ul>
+                <li>Hair Styling</li>
+                <li>Makeup Artist</li>
+                <li>Fashion Stylist Referral</li>
+                <li>Fashion Style Consultation</li>
+              </ul>
+            </div>
+          </div>
+          <div class="content__row"></div>
         </div>
       </div>
     </div>
