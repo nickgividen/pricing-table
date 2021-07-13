@@ -85,10 +85,10 @@
     }
 
     .selector {
-      font-size: 0.9rem;
+      font-size: 1.1rem;
       background-color: #f6f8fd;
       color: #161819;
-      width: 32%;
+      width: 33%;
       min-width: 90px;
       padding: 0.5rem 0;
       text-align: center;
@@ -101,13 +101,15 @@
     }
 
     .selector--starter {
-      border: 2px solid #ddd3d3;
+      border: 1px solid #ddd3d3;
+      margin-right: 16px;
     }
     .selector--professional {
-      border: 2px solid #9585ab;
+      border: 1px solid #9585ab;
     }
     .selector--business {
-      border: 2px solid #735b87;
+      border: 1px solid #735b87;
+      margin-left: 16px;
     }
 
     .selector--selected {
@@ -170,7 +172,7 @@
     }
 
     .content__row--child {
-      width: 245px;
+      max-width: 245px;
     }
 
     .plan__tab {
@@ -191,6 +193,7 @@
 
     .plan__title {
       font-weight: 800;
+      color: #161819;
     }
 
     .price {
@@ -245,6 +248,7 @@
 
     .contact {
       text-align: center;
+      margin-top: 40px;
     }
 
     .bold {
@@ -270,9 +274,17 @@
       .price {
         margin-top: 2rem;
       }
+      .selector__container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .selector {
+        width: 100%;
+        margin: 0.25rem 0;
+      }
     }
 
-    @media screen and (min-width: 950px) {
+    @media screen and (min-width: 1093px) {
       .selector__container {
         display: none;
       }
